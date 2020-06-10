@@ -6,6 +6,7 @@
 
 ## tools
 git
+[Lombok]https://projectlombok.org/
 
 ## script
 ```sql
