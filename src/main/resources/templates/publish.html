@@ -3,11 +3,11 @@
 <head>
     <title>Post - Q & A Community</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="css/community.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="/css/community.css"/>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="js/bootstrap.min.js" type="application/javascript"></script>
+    <script src="/js/bootstrap.min.js" type="application/javascript"></script>
 
 </head>
 <body>
@@ -19,6 +19,7 @@
             <hr>
 
             <form action="/publish" method="post">
+                <input type="hidden" name="id" th:value="${id}">
                 <div class="form-group">
                     <label for="title">Question Outline</label>
                     <input type="text" class="form-control" th:value="${title}" id="title" name="title" placeholder="Outline">
@@ -33,6 +34,7 @@
                     <label for="tag">Add Labels</label>
                     <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag" placeholder="split by comma">
                 </div>
+
                 <div class="container-fluid main">
                     <div class="row">
                         <div class="alert alert-danger col-lg-9 col-md-12 col-sm-12 col-xs-12" th:text="${error}" th:if="${error != null}"></div>
