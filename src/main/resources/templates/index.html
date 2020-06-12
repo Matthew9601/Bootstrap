@@ -30,9 +30,9 @@
                     </h4>
                     <span th:text="${question.description}"></span> <br>
                     <span class="text-desc">
-                        <span th:text="${question.comment_counter}"></span> comments ·
-                        <span th:text="${question.view_counter}"></span> views ·
-                        <span th:text="${#dates.format(question.gmt_create, 'yyyy-MM-dd HH:mm')}"></span>
+                        <span th:text="${question.commentCounter}"></span> comments ·
+                        <span th:text="${question.viewCounter}"></span> views ·
+                        <span th:text="${#dates.format(question.gmtCreate, 'yyyy-MM-dd HH:mm')}"></span>
                     </span>
                 </div>
             </div>
