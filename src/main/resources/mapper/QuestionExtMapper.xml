@@ -20,4 +20,11 @@
         where id = #{id}
     </update>
 
+    <update id="incCommentCounter" parameterType="life.majiang.community.model.Question">
+        update QUESTION
+        set
+        COMMENT_COUNTER = COMMENT_COUNTER + #{commentCounter,jdbcType=INTEGER}
+        where id = #{id}
+    </update>
+
 </mapper>
