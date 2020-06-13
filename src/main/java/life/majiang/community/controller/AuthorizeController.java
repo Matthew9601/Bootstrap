@@ -30,6 +30,15 @@ public class AuthorizeController {
     @Value("${github.redirect.url}")
     private String redirectUrl;
 
+//    @Value("${github.client.id}")
+//    private String clientId;
+//
+//    @Value("${github.client.secret}")
+//    private String clientSecret;
+//
+//    @Value("http://localhost:8887")
+//    private String redirectUrl;
+
     @Autowired
     private UserService userService;
 
@@ -38,14 +47,14 @@ public class AuthorizeController {
                            @RequestParam(name = "state") String state,
                            HttpServletResponse response){
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
-        accessTokenDTO.setClientId(clientId);
-        accessTokenDTO.setClientSecret(clientSecret);
+        accessTokenDTO.setClient_id(clientId);
+        accessTokenDTO.setClient_secret(clientSecret);
         accessTokenDTO.setCode(code);
-        accessTokenDTO.setRedirectUrl(redirectUrl);
+        accessTokenDTO.setRedirect_url(redirectUrl);
         accessTokenDTO.setState(state);
         String accessToken = githubProvider.getAccessToken(accessTokenDTO);
         GithubUser githubUser = githubProvider.getUser(accessToken);
-        if(githubUser != null && githubUser.getName() != null){
+        if(githubUser != null && githubUser.getId() != null){
             User user = new User();
             String token = UUID.randomUUID().toString();
             user.setToken(token);
