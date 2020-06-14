@@ -6,7 +6,8 @@ public enum CustomizeErrorCode implements ICustomizeErrorCode{
     NOT_LOGIN(2003, "Not log in!"),
     SYS_ERROR(2004, "Server Error!"),
     TYPE_PARAM_WRONG(2005, "comment error!"),
-    COMMENT_NOT_FOUND(2006, "comment not found!");
+    COMMENT_NOT_FOUND(2006, "comment not found!"),
+    CONTENT_IS_EMPTY(2007, "reply cannot be empty!");
 
     @Override
     public String getMessage() {
