@@ -30,15 +30,6 @@ public class AuthorizeController {
     @Value("${github.redirect.url}")
     private String redirectUrl;
 
-//    @Value("${github.client.id}")
-//    private String clientId;
-//
-//    @Value("${github.client.secret}")
-//    private String clientSecret;
-//
-//    @Value("http://localhost:8887")
-//    private String redirectUrl;
-
     @Autowired
     private UserService userService;
 
